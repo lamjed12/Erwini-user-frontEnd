@@ -1,0 +1,425 @@
+<div class="full_container">
+  <div class="inner_container">
+    <app-sidebar></app-sidebar>
+    <div id="content">
+      <app-navbar></app-navbar>
+      <div class="midde_cont">
+        <div class="container-fluid">
+
+
+          <div class="row column_title">
+            <div class="col-md-12">
+              <div class="page_title">
+                <h2>PUITS</h2>
+              </div>
+            </div>
+
+            <div class="col-md-12">
+              <div class="white_shd full margin_bottom_30">
+                <div class="full graph_head">
+                  <div class="button_block margin_0">
+                    <!-- <button
+            type="button"
+            class="btn cur-p btn-primary"
+            data-toggle="modal"
+            data-target="#myModal"
+        
+          >
+            Add New +
+          </button> -->
+                    <!-- Rounded switch -->
+
+                  </div>
+                </div>
+                <!-- <label class="switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+      </label> -->
+
+                <div class="table_section padding_infor_info">
+                  <div class="table-responsive-sm">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <!-- <th>#</th> -->
+                          <th>Puit</th>
+                          <!-- <th>Phone</th>
+                <th>Password</th> -->
+                          <th>Pus</th>
+                          <th>Stop/Start</th>
+                          <th>connection</th>
+                          <!-- <th>Agenda</th> -->
+                          <th>Securite</th>
+                          <th>Alert</th>
+                          <!-- <th>Nb Vanne</th>
+                <th>Points</th> -->
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+                      <tbody *ngFor="let puit of puits; let i = index">
+                        <tr>
+                          <td>{{i + 1}}</td>
+                          <td>{{puit.Pus}}</td>
+
+                        
+                          <td> 
+                            <label class="switch">
+                           <input type="checkbox" checked="" [(ngModel)]="puit.Active" (change)="updatePuitStatus(puit)">
+                           <span class="slider round"></span>
+                         </label>
+                       
+                       
+                       </td>
+                       <!-- <div  *ngIf="puit.Active == 'false'">
+                            <input type="checkbox" [(ngModel)]="puit.Active"  class="onoffslied-checkbox" (change)="updatePuitStatus(puit)" >
+                          <label class="switch">
+                                <span class="slider round"></span>
+                              
+                              </label> 
+                          </div> -->  
+                     
+
+                         <td>
+                            <i class="fa fa-wifi" style="font-size:44px"></i>
+                            
+                            <div *ngIf="puit.Connection == 'true'" class="sensor">
+                              <div class="sensor-header">
+                                <img src="assets/images/layout_img/sensor.png" alt="Sensor Image">
+                              </div>
+                            </div>
+
+                            <div *ngIf="puit.Connection == 'false'" class="sensor">
+                              <div class="sensor-back">
+                                <img src="assets/images/layout_img/sensor.png" alt="Sensor Image">
+                              </div>
+                          </div>
+                          </td>
+
+                          <td>
+                            <div class="col-md-2 col-xs-3">
+
+                              <div *ngIf="puit.Security == 'Yes'"  class="onoffswitch2">
+                                <input type="checkbox" name="onoffswitch2" class="onoffswitch2-checkbox"
+                                [id]="'myonoffswitch2-' + puit._id" checked (change)="updatePuitSecurity(puit)"  >
+                                <label class="onoffswitch2-label" [for]="'myonoffswitch2-' + puit._id">
+                                  <span class="onoffswitch2-inner"></span>
+                                  <span class="onoffswitch2-switch"></span>
+                                </label>
+                              </div>
+                        <div *ngIf="puit.Security == 'No'"  class="onoffswitch2">
+                                <input type="checkbox" name="onoffswitch2" class="onoffswitch2-checkbox"
+                                [id]="'myonoffswitch2-' + puit._id" (change)="updatePuitSecurity(puit)"  >
+                                <label class="onoffswitch2-label" [for]="'myonoffswitch2-' + puit._id">
+                                  <span class="onoffswitch2-inner"></span>
+                                  <span class="onoffswitch2-switch"></span>
+                                </label>
+                              </div> 
+                            
+                           <!--  -->   
+                            </div>
+                          </td>
+                          <td>
+                            <div *ngIf="puit.Alert == 'Yes'">
+                              <div class="alert alert-success" role="alert">
+                                <i class="fa fa-exclamation-triangle"></i>
+                                <p class="alert-text">Security Alert</p>
+                              </div>
+                            </div>
+                            <div *ngIf="puit.Alert == 'No'">
+                              <div class="alert alert-danger" role="alert">
+                                <i class="fa fa-exclamation-triangle"></i>
+                                <p class="alert-text">Security Alert</p>
+                              </div>
+                            </div>
+                            <div *ngIf="puit.Alert == 'Maybe'">
+                            <div class="alert alert-warning" role="alert">
+                              <i class="fa fa-exclamation-triangle"></i>
+                              <p class="alert-text">Security Alert</p>
+                            </div>
+                          </div>
+                          </td>
+                          <!-- <td>{{moteur.NbVanne }}</td>
+                          <td>{{moteur.Points}}</td> -->
+                          <td class="icon_info">
+
+
+                            <ul>
+                              <li>
+                                <a class="dropdown-item fa fa-refresh" data-target="#updatePuitModal"
+                                  data-toggle="modal" href="javascript:void(0)" (click)="onOpenModal1(puit,'edit')">
+
+                                </a>
+                              </li>
+                              <li>
+                                <a class="fa fa-plus-circle" data-target="#addPuitModel" aria-hidden="true"
+                                  data-toggle="modal" href="javascript:void(0)"
+                                  (click)="onOpenModal1(puit,'addNewPuit')"></a>
+                              </li>
+
+                            </ul>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="modal fade" id="addPuitModel" tabindex="-1" role="dialog" aria-labelledby="addPuitModelLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="addPuitModelLabel">Ajouter planifier de puit</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+
+                  <form #addPlanifierPuitForm="ngForm" (ngSubmit)="addNewAppointmenPuit(addPlanifierPuitForm)">
+
+                    <div>
+
+
+                      <label for="datetimepicker">Select date start:</label>
+                      <input type="datetime-local"  min="{{dateToday() | date:'yyyy-MM-ddTHH:mm'}}" id="datetimepicker" name="date_debut" [(ngModel)]="startDate" step="60">
+                    </div>
+                    <div>
+                      <label for="datetimepicker">Select date off :</label>
+
+                      <input type="datetime-local" [min]="startDate"  id="datetimepicker" name="date_fin" [(ngModel)]="endDate" step="60" [min]="startDate" [disabled]="!startDate" >
+                    </div>
+
+                    <button type="submit" class="btn btn-danger">
+                      SAVE
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="modal fade" id="updatePuitModal" tabindex="-1" role="dialog"
+            aria-labelledby="updatePuitModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="updatePuitModalLabel">Modifier les planification de puit</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+
+                  <form #editForm="ngForm">
+
+                    <div class="table_section padding_infor_info">
+                      <div class="table-responsive-sm">
+                        <table class="table">
+                          <thead>
+                            <tr>
+                              <!-- <th>Id</th> -->
+                              <th>Date Debut</th>
+                              <th>Date Fin</th>
+                              <th>Action</th>
+                            </tr>
+                          </thead>
+                          <tbody *ngFor="let agenda of agendaOfPuits">
+                            <tr>
+                              <!-- <td>{{agenda._id}}</td> -->
+                              <td>{{agenda.date_debut}}</td>
+                              <td>{{agenda.date_fin}}</td>
+                              <td class="icon_info">
+                                <ul>
+                                  <li>
+                                    <a class="dropdown-item fa fa-trash" data-target="#updateMissionModal"
+                                      (click)="deleteAppointmentPuit(agenda._id)"></a>
+                                  </li>
+
+                                </ul>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+
+
+                  </form>
+                  <!-- <button type="submit" class="btn btn-danger">
+                    OK
+                  </button> -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="row column_title">
+            <div class="col-md-12">
+              <div class="page_title">
+                <h2>POMPES</h2>
+              </div>
+            </div>
+
+            <div class="col-md-12">
+              <div class="white_shd full margin_bottom_30">
+                <div class="full graph_head">
+                  <div class="button_block margin_0">
+
+                  </div>
+                </div>
+
+                <div class="table_section padding_infor_info">
+                  <div class="table-responsive-sm">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th>Pompe</th>
+                          <th>Stop/Start</th>
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+                      <tbody *ngFor="let pompe of pompes ; let i = index">
+                        <tr>
+                          <td>{{i + 1}} </td>
+
+                          <td><label class="switch">
+                              <input type="checkbox" [(ngModel)]="pompe.active" (change)="updatePompeStatus(pompe)" checked>
+                              <span class="slider round" ></span>
+                            </label></td>
+
+
+                          <td class="icon_info">
+                            <ul>
+                              <li>
+                                <a class="dropdown-item fa fa-refresh" data-target="#updatePompeModal"
+                                  data-toggle="modal" href="javascript:void(0)" (click)="onOpenModal2(pompe,'edit')">
+
+                                </a>
+                              </li>
+                              <li>
+                                <a class="fa fa-plus-circle" data-target="#addPompeModel" aria-hidden="true"
+                                  data-toggle="modal" href="javascript:void(0)"
+                                  (click)="onOpenModal2(pompe,'addNewPompe')"></a>
+                              </li>
+
+                            </ul>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="modal fade" id="addPompeModel" tabindex="-1" role="dialog" aria-labelledby="addPompeModelLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="addPompeModelLabel">Ajouter planifier de pompe</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+
+                  <form #addPlanifierPompeForm="ngForm" (ngSubmit)="addNewAppointmenPompe(addPlanifierPompeForm)">
+
+                <!---->    <div>
+                      <label for="datetimepicker">Start Date:</label>
+                      <input type="datetime-local" id="datetimepicker" name="date_debut" [(ngModel)]="startDate" min="{{dateToday() | date:'yyyy-MM-ddTHH:mm'}}">
+                    </div>
+                    
+                    <div>
+                      <label for="datetimepicker">End Date:</label>
+                      <input type="datetime-local" id="datetimepicker" name="date_fin" [(ngModel)]="endDate" [min]="startDate" [disabled]="!startDate" >
+                    </div>
+
+
+                    <button type="submit" class="btn btn-danger">
+                      SAVE
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+          <div class="modal fade" id="updatePompeModal" tabindex="-1" role="dialog"
+            aria-labelledby="updatePompeModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="updatePompeModalLabel">Modifier les planification de pompe</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+
+                  <form #editForm="ngForm">
+
+                    <div class="table_section padding_infor_info">
+                      <div class="table-responsive-sm">
+                        <table class="table">
+                          <thead>
+                            <tr>
+                              <!-- <th>Id</th> -->
+                              <th>Date Debut</th>
+                              <th>Date Fin</th>
+                              <th>Action</th>
+                            </tr>
+                          </thead>
+                          <tbody *ngFor="let agenda of agendaofPompe">
+                            <tr>
+                              <!-- <td>{{agenda._id}}</td> -->
+                              <td>{{agenda.date_debut}}</td>
+                              <td>{{agenda.date_fin}}</td>
+                              <td class="icon_info">
+                                <ul>
+                                <!-- <li>
+                                    <a class="dropdown-item fa fa-refresh" data-target="#updateMissionModal"
+                                      (click)="refreshPompeAgenda(agenda._id)"></a>
+                                  </li> -->  
+                                  <li>
+                                    <a class="dropdown-item fa fa-trash" data-target="#updateMissionModal"
+                                      (click)="deleteAppointmentPompe(agenda._id)"></a>
+                                  </li>
+
+                                </ul>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+
+
+                  </form>
+                  <!-- <button type="submit" class="btn btn-danger">
+                  OK
+                </button> -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

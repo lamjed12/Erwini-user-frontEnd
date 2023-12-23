@@ -1,0 +1,63 @@
+<div class="full_container">
+  <div class="inner_container">
+    <app-sidebar></app-sidebar>
+    <div id="content">
+      <app-navbar></app-navbar>
+      <div class="midde_cont">
+        <div class="container-fluid">
+          <div class="row column_title">
+            <div class="col-md-12">
+              <div class="page_title">
+                <h2>Historiques</h2>
+                <div class="row height d-flex justify-content-end align-items-center">
+                  <button class="favorite styled" type="button" (click)="filedownload()">
+                    Click To Download
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="table_section padding_infor_info">
+              <div class="table-responsive-sm">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <!-- <th>#</th> -->
+                      <th>Zone</th>
+                      <th>Date</th>
+                      <th>Sol</th>
+                      <th>Externe</th>
+
+                    </tr>
+                  </thead>
+                  <tbody *ngFor="let historique of historiques">
+                    <tr>
+                      <!-- <td>{{historique._id}}</td> -->
+                      <td>{{historique.num_zone}}</td>
+                      <td>{{historique.date | date:'yyyy-MM-ddTHH:mm'}}</td>
+                      <td>  
+                        <div class="sensor-data" *ngFor="let mesure of historique.mesures">
+                          <p>Temperature: {{ mesure.tem_sol }}°C</p>
+                          <p>Humidity: {{ mesure.hum_sol }}%</p>
+                        </div>
+                      </td>
+                      
+                      
+                      
+                      <td>
+                        
+                        <div class="sensor-data">
+                          <p>Temperature: {{ historique.mesure?.tem_externe }}°C</p>
+                          <p>Humidity:{{ historique.mesure?.hum_externe }}%</p>
+                        </div>
+                      </td>
+
+
+
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+          </div>

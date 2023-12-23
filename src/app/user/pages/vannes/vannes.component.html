@@ -1,0 +1,140 @@
+
+<div class="full_container">
+  <div class="inner_container">
+    <app-sidebar></app-sidebar>
+    <div id="content">
+    <app-navbar></app-navbar>
+    <div class="midde_cont">
+        <div class="container-fluid">
+
+
+<div class="row column_title">
+  <div class="col-md-12">
+    <div class="page_title">
+      <h2>vannes</h2>
+    </div>
+  </div>
+
+<div class="col-md-12">
+    <div class="white_shd full margin_bottom_30">
+      <div class="full graph_head">
+        <div class="button_block margin_0">
+          <!-- <button
+            type="button"
+            class="btn cur-p btn-primary"
+            data-toggle="modal"
+            data-target="#myModal"
+        
+          >
+            Add New +
+          </button> -->
+          <!-- Rounded switch -->
+
+        </div>
+      </div>
+      
+      
+      <div class="table_section padding_infor_info">
+        <div class="table-responsive-sm">
+          <table class="table">
+            <thead>
+              <tr>
+                <!-- <th>#</th> -->
+                <th>Zone</th>
+                <th>NbVanne</th>
+                <!-- <th>Password</th> -->
+                <th>Batterie</th>
+                <th>Start/Stop</th>
+                <th>Sol</th>
+                <th>Externe</th>
+                <!-- <th>L'humidete du sol</th>
+                <th>L'humidete externe</th> -->
+                <!-- <th>Nb Vanne</th>
+                <th>Points</th> -->
+                <!-- <th>Action</th> -->
+              </tr>
+            </thead>
+      
+
+                <tbody *ngFor="let vanne of vannes; let i = index">
+                  <tr>
+                    <td>{{ i + 1}}</td>
+                    <td>{{ vanne.NbVanne }}</td>
+                    <!-- <td>{{ vanne.Zone!._id }}</td> -->
+                    <td>{{ vanne.Batterie }}</td>
+                    <td> 
+                       <label class="switch">
+                      <input type="checkbox" checked="" [(ngModel)]="vanne.status" (change)="ChangeVanneStatus(vanne)">
+                      <span class="slider"></span>
+                    </label>
+                  
+                  
+                  </td>
+                    <td>
+                      <div class="sensor-data" >
+                        <p>Temperature: {{ vanne.mesures?.tem_sol }}°C</p>
+                        <p>Humidity:{{ vanne.mesures?.hum_sol }}%</p>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="sensor-data">
+                        <p>Temperature: {{ vanne.mesures?.tem_externe }}°C</p>
+                        <p>Humidity:{{ vanne.mesures?.hum_externe }}%</p>
+                      </div>
+                    </td>
+                <!-- <td></td> -->
+                <!-- <td>{{vanne.NbVanne }}</td>
+                
+                <td>{{vanne.Points}}</td> -->
+                <!-- <td class="icon_info">
+                  <ul>
+                    <li>
+                     <a  class="dropdown-item fa fa-refresh" data-target="#updateMissionModal"
+                     data-toggle="modal"
+                      href="javascript:void(0)"  (click)="onOpenModal1(vanne,'edit')">
+                       <i
+                      class="fa fa-refresh"
+                      aria-hidden="true"
+                      data-toggle="modal"
+                      data-target="#myModal"
+                    ></i> 
+                  </a> 
+                    </li>
+                     <li  >
+                      <a class="fa fa-plus-circle" data-target="#" aria-hidden="true"></a>
+                    </li> 
+                    <li>
+                      <a
+                        class="fa fa-trash dropdown-item"
+                        data-toggle="modal"
+                        data-target="#deleteCommand"
+                        aria-hidden="true"
+                        href="javascript:void(0)" (click)="onOpenModal1(vanne,'delete')"
+                      ></a>
+                    </li>
+                  </ul>
+                </td> -->
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+</div>
+</div>

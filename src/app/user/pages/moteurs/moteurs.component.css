@@ -1,0 +1,343 @@
+.setting {
+  float: right;
+  padding: 0;
+}
+.spaceicon {
+}
+
+.icon_info ul li {
+  float: left;
+  width: 35px;
+  /* height: 35px; */
+  border-radius: 100%;
+  text-align: center;
+  line-height: 20px;
+  position: relative;
+  margin: 0px 0 0 0px;
+}
+
+.icon_info ul li .fa-plus-circle {
+  color: #ff5722;
+  size: 50px;
+}
+
+.icon_info ul li .fa-trash {
+  color: #1ed085;
+  size: 50px;
+}
+
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(255, 3, 3);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #21f387;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #21f387  ;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(255, 3, 3);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+
+.onoffswitchA-switch {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+slider:checked {
+  background-color: #21f387  ;
+}
+
+
+slider:focus{
+  box-shadow: 0 0 1px #21f387  ;
+}
+
+slider:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.alert-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1em;
+  background-color: #ffc107;
+  color: #212529;
+}
+
+.fa-exclamation-triangle {
+  font-size: 2em;
+  margin-right: 0.5em;
+}
+
+
+.onoffslied-checkbox {
+  display: none;
+}
+
+.onoffslied-checkbox:checked + .onoffswitch2-label .onoffswitch2-inner {
+  margin-left: 0;
+}
+.onoffslied-checkbox:checked + .onoffswitch2-label .onoffswitch2-switch {
+  right: 0px; 
+}
+
+.onoffswitch2 {
+  position: relative; width: 90px;
+  -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.onoffswitch2-checkbox {
+  display: none;
+}
+.onoffswitch2-label {
+  display: block; overflow: hidden; cursor: pointer;
+  border: 2px solid #999999; border-radius: 5px;
+}
+.onoffswitch2-inner {
+  display: block; width: 200%; margin-left: -100%;
+  -moz-transition: margin 0.3s ease-in 0s; -webkit-transition: margin 0.3s ease-in 0s;
+  -o-transition: margin 0.3s ease-in 0s; transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch2-inner:before, .onoffswitch2-inner:after {
+  display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+  font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+.onoffswitch2-inner:before {
+  content: "Yes";
+  padding-left: 10px;
+  background-color: #2fff63; color: #000000;
+}
+.onoffswitch2-inner:after {
+  content: "No";
+  padding-right: 10px;
+  background-color: #ff0000; color: #000000;
+  text-align: right;
+}
+.onoffswitch2-switch {
+  display: block; width: 18px; margin: 0px;
+  background: #FFFFFF;
+  border: 2px solid #999999; border-radius: 5px;
+  position: absolute; top: 0; bottom: 0; right: 68px;
+  -moz-transition: all 0.3s ease-in 0s; -webkit-transition: all 0.3s ease-in 0s;
+  -o-transition: all 0.3s ease-in 0s; transition: all 0.3s ease-in 0s; 
+  background-image: -moz-linear-gradient(center top, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 100%);
+  background-image: -webkit-linear-gradient(center top, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 100%);
+  background-image: -o-linear-gradient(center top, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 100%);
+  background-image: linear-gradient(center top, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 100%);
+}
+.onoffswitch2-checkbox:checked + .onoffswitch2-label .onoffswitch2-inner {
+  margin-left: 0;
+}
+.onoffswitch2-checkbox:checked + .onoffswitch2-label .onoffswitch2-switch {
+  right: 0px; 
+}
+
+.cmn-toggle 
+{
+position: absolute;
+margin-left: -9999px;
+visibility: hidden;
+}
+.cmn-toggle + label 
+{
+display: block;
+position: relative;
+cursor: pointer;
+outline: none;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+input.cmn-toggle-round-flat + label 
+{
+padding: 2px;
+width: 75px;
+height: 30px;
+background-color: #dddddd;
+-webkit-border-radius: 60px;
+-moz-border-radius: 60px;
+-ms-border-radius: 60px;
+-o-border-radius: 60px;
+border-radius: 60px;
+-webkit-transition: background 0.4s;
+-moz-transition: background 0.4s;
+-o-transition: background 0.4s;
+transition: background 0.4s;
+}
+input.cmn-toggle-round-flat + label:before, input.cmn-toggle-round-flat + label:after 
+{
+display: block;
+position: absolute;
+content: "";
+}
+input.cmn-toggle-round-flat + label:before 
+{
+top: 2px;
+left: 2px;
+bottom: 2px;
+right: 2px;
+background-color: #fff;
+-webkit-border-radius: 60px;
+-moz-border-radius: 60px;
+-ms-border-radius: 60px;
+-o-border-radius: 60px;
+border-radius: 60px;
+-webkit-transition: background 0.4s;
+-moz-transition: background 0.4s;
+-o-transition: background 0.4s;
+transition: background 0.4s;
+}
+input.cmn-toggle-round-flat + label:after 
+{
+top: 4px;
+left: 4px;
+bottom: 4px;
+width: 22px;
+background-color: #dddddd;
+-webkit-border-radius: 52px;
+-moz-border-radius: 52px;
+-ms-border-radius: 52px;
+-o-border-radius: 52px;
+border-radius: 52px;
+-webkit-transition: margin 0.4s, background 0.4s;
+-moz-transition: margin 0.4s, background 0.4s;
+-o-transition: margin 0.4s, background 0.4s;
+transition: margin 0.4s, background 0.4s;
+}
+
+
+.sensor {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.sensor-header {
+  background-color: #00ff15;
+  padding: 5px;
+  text-align: center;
+}
+
+.sensor-back{
+  background-color: red;
+  padding: 5px;
+  text-align: center;
+}
+.sensor-body {
+  margin-top: 10px;
+}
+
+
+
+input[type="datetime-local"] {
+  width: 200px;
+  height: 30px;
+  padding: 5px;
+  font-size: 16px;
+}
+
+
+
+
+
+
